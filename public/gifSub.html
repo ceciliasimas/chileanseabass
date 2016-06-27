@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!-- Modules -->
+
+<!-- Controllers -->
+<script src="controllers/GIFController.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <title>website</title>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <ul class="nav navbar-nav">
+            <li ><a href="index.html">Home</a></li>
+            <li class="active"><a href="gifSub.html">GIF Submissions</a></li>
+            <li><a href="http://www.theuselessweb.com/">Get Me Out of Here</a></li>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid" ng-app="myApp">
+    <h1>GIF Submissions</h1>
+    <form role="form" action="http://127.0.0.1:5000/gif" method="POST">
+        <div class="form-group">
+            <label >Link:</label>
+            <input class="form-control" ng-model="gif.link" name="link" placeholder="url" required>
+        </div>
+        <div class="form-group">
+            <label>Tags:</label>
+            <input class="form-control" ng-model="gif.tags" name="tags" placeholder="lol" enabled>
+        </div>
+        <button type="submit" class="btn btn-default" ng-click="addGIF()">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

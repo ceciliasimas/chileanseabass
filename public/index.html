@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!-- Modules -->
+
+<!-- Controllers -->
+<script src="controllers/GIFController.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <title>website</title>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid" >
+
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="gifSub.html">GIF Submissions</a></li>
+            <li><a href="http://www.theuselessweb.com/">Get Me Out of Here</a></li>
+
+        </ul>
+    </div>
+</nav>
+
+<div align="center" class="container-fluid"  ng-controller="GIFController">
+    <h1 >GIF Library</h1>
+    <div  class="container-fluid"  ng-repeat="gif in gifs ">
+        <br>
+        <img ng-src="{{gif.link}}" alt="{{gif.tags}}">
+    </div>
+</div>
+
+</body>
+</html>
